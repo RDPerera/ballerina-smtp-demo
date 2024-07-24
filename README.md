@@ -17,8 +17,6 @@ git clone https://github.com/RDPerera/ballerina-smtp-demo
 cd ballerina-smtp-demo
 ```
 
-Replace `<repository_url>` with the actual URL of your repository and `<repository_directory>` with the name of the cloned directory.
-
 ## Configuration
 
 Before running the program, you need to provide the necessary configuration values. You can set these configurations in the `Config.toml` file.
