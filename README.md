@@ -54,9 +54,9 @@ public function main() returns error? {
 
     // Defines the email that is required to be sent.
     email:Message email = {
-        to: "dilanp@wso2.com",
-        cc: "nuvindu@wso2.com",
-        bcc: "r.dilanperera@gmail.com",
+        to: "sample@sample.com",
+        cc: "sample@sample.com",
+        bcc: "sample@sample.com",
         subject: "Sample Email",
         body: "This is a sample email."
     };
