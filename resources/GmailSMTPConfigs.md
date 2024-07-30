@@ -30,5 +30,4 @@ username = "your.email@gmail.com"
 password = "your_app_password"
 ```
 
-Host will be `smtp.gmail.com` for Gmail's SMTP server.You need to replace `your.email@gmail.com` with your Gmail address and `your_app_password` with the app password you generated.
-With these settings, you should be able to send emails using Gmail's SMTP server through your Ballerina application.
+Host will be `smtp.gmail.com` for Gmail's SMTP server.You need to replace `your.email@gmail.com` with your Gmail address and `your_app_password` with the app password you generated.Not need to provide a port in the `smtpConfig` section. With these settings, you should be able to send emails using Gmail's SMTP server through your Ballerina application.

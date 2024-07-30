@@ -1,6 +1,6 @@
 # Ballerina SMTP Send Mail Sample Demo
 
-This sample Ballerina program demonstrates how to send an email using the Ballerina `email` module via an SMTP server. 
+This sample Ballerina program demonstrates how to send an email using the Ballerina `email` module via an SMTP server.
 
 ## Prerequisites
 
@@ -27,6 +27,9 @@ Create a `Config.toml` file in the same directory as your Ballerina program with
 host = "<SMTP_SERVER_HOST>"
 username = "<SMTP_USERNAME>"
 password = "<SMTP_PASSWORD>"
+
+[smtpConfig]
+port = <SMTP_PORT>
 ```
 
 Replace the placeholders with your actual SMTP server details:
@@ -34,6 +37,7 @@ Replace the placeholders with your actual SMTP server details:
 - `<SMTP_SERVER_HOST>`: The host address of your SMTP server (e.g., `smtp.abc.com`).
 - `<SMTP_USERNAME>`: Your SMTP server username (usually your email address).
 - `<SMTP_PASSWORD>`: Your SMTP server password or application-specific password.
+- `<SMTP_PORT>`: The port number of your SMTP server (e.g., 465).
 
 If you are using Gmail's SMTP server, refer to the [How to Get Gmail SMTP Config for Your Gmail](/resources/GmailSMTPConfigs.md) guide.
 
@@ -47,17 +51,23 @@ import ballerina/email;
 configurable string host = ?;
 configurable string username = ?;
 configurable string password = ?;
+configurable email:SmtpConfiguration smtpConfig = ?;
 
 public function main() returns error? {
-    // Creates an SMTP client with the provided configuration.
-    email:SmtpClient smtpClient = check new(host, username, password);
+    // Creates an SMTP client with the provided configuration. The configuration is read from
+    email:SmtpClient smtpClient = check new (
+        host,
+        username,
+        password,
+        smtpConfig
+    );
 
     // Defines the email that is required to be sent.
     email:Message email = {
-        to: "dilanp@wso2.com",
-        cc: "nuvindu@wso2.com",
-        bcc: "r.dilanperera@gmail.com",
-        subject: "Sample Email",
+        to: "to@email.com",
+        cc: "cc@email.com",
+        bcc: "bcc@email.com",
+        subject: "Sample Subject",
         body: "This is a sample email."
     };
 
