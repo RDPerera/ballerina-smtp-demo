@@ -64,10 +64,10 @@ public function main() returns error? {
 
     // Defines the email that is required to be sent.
     email:Message email = {
-        to: "to@email.com",
-        cc: "cc@email.com",
-        bcc: "bcc@email.com",
-        subject: "Sample Subject",
+        to: "sample@sample.com",
+        cc: "sample@sample.com",
+        bcc: "sample@sample.com",
+        subject: "Sample Email",
         body: "This is a sample email."
     };
 
